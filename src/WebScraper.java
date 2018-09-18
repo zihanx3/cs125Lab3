@@ -21,8 +21,9 @@ public class WebScraper {
         return contents;
     }
 
-    public static void main(String unused) {
-        String[] splits = unused.split("\\s+");
+    public static void main(String[] input) {
+        String text = urlToString("http://erdani.com/tdpl/hamlet.txt");
+        String[] splits = text.split("\\s+");
         int count = 0;
         for (int i = 0; i < splits.length; i++) {
             if (splits[i] == "Prince" || splits[i] == "prince") {
@@ -36,5 +37,3 @@ public class WebScraper {
         System.out.println(count);
     }
 }
-System.out.println(main(urlToString("http://erdani.com/tdpl/hamlet.txt")));
-
